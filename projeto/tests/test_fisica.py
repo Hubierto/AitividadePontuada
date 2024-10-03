@@ -1,4 +1,4 @@
-import pytest
+import pytest 
 from projeto.models.fisica import Fisica
 from projeto.models.endereco import Endereco
 from projeto.models.enums.unidade_federativa import UnidadeFederativa
@@ -7,16 +7,34 @@ from projeto.models.enums.estado_civil import EstadoCivil
 
 @pytest.fixture
 def fisica_valida():
-    fisica = Fisica(111, "a", "1111-1111", "a@gmail.com", Endereco("Rua A", "1", "Térreo", "1111", "São Paulo", UnidadeFederativa.SAO_PAULO), Sexo.FEMININO, EstadoCivil.SOLTEIRO, "01/01/01")
+    fisica = Fisica(
+        222,
+        "Maria Oliveira",
+        "2222-2222",
+        "maria.oliveira@gmail.com",
+        Endereco("Avenida Brasil", "100", "5º andar", "2222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO),
+        Sexo.FEMININO,
+        EstadoCivil.CASADO,
+        "15/05/90"
+    )
     return fisica
 
 def test_data_de_nascimento_valido(fisica_valida):
-    assert fisica_valida.datanascimento == "01/01/01"
+    assert fisica_valida.datanascimento == "15/05/90"
 
 def test_mudar_data_de_nascimento_valido(fisica_valida):
-    fisica_valida.datanascimento = "02/02/02"
-    assert fisica_valida.datanascimento == "02/02/02"
+    fisica_valida.datanascimento = "20/10/95"
+    assert fisica_valida.datanascimento == "20/10/95"
 
 def test_data_de_nascimento_tipo_invalido():
     with pytest.raises(TypeError, match="Data de nascimento é inválida!"):
-        Fisica(111, "a", "1111-1111", "a@gmail.com", Endereco("Rua A", "1", "Térreo", "1111", "São Paulo", UnidadeFederativa.SAO_PAULO), Sexo.FEMININO, EstadoCivil.SOLTEIRO, 1)
+        Fisica(
+            222,
+            "Maria Oliveira",
+            "2222-2222",
+            "maria.oliveira@gmail.com",
+            Endereco("Avenida Brasil", "100", "5º andar", "2222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO),
+            Sexo.FEMININO,
+            EstadoCivil.CASADO,
+            12345  # Tipo inválido para a data de nascimento
+        )
