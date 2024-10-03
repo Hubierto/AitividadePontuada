@@ -1,4 +1,4 @@
-import pytest  
+import pytest    
 from projeto.models.engenheiro import Engenheiro
 from projeto.models.endereco import Endereco
 from projeto.models.enums.estado_civil import EstadoCivil
@@ -48,6 +48,6 @@ def test_crea_tipo_invalido():
             "4444",
             "5555",
             Setor.ENGENHARIA,
-            "8500",
-            "CREA inválido!"  # Tipo inválido para o CREA
+            8500,
+            12345  # Passando um número para o CREA, que deve ser inválido
         )
