@@ -51,13 +51,13 @@ def test_nome_tipo_invalido():
         Pessoa(67890, 12345, "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_nome_vazio():
-    with pytest.raises(TypeError, match="Nome vazio!"):
+    with pytest.raises(ValueError, match="Nome vazio!"):
         Pessoa(67890, "", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_numero_tipo_invalido():
     with pytest.raises(TypeError, match="Telefone inválido!"):
         Pessoa(67890, "Roberto Silva", 71999999999, "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
-def test_email_tipo_valido():
+def test_email_tipo_invalido():
     with pytest.raises(TypeError, match="Email inválido!"):
-        Pessoa(67890, "Roberto Silva", "71999999999", 0, Endereco("Avenida Brasil", 456, "
+        Pessoa(67890, "Roberto Silva", "71999999999", 0, Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
