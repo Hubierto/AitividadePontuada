@@ -13,3 +13,5 @@ from projeto.models.enums.setor import Setor
 os.system("cls || clear")
 
 medico1 = Medico(999, "Ray", "71988228822", "ray@gmail.com", Endereco("praça do sol", "1230", "E", "61243", "Salvador", UnidadeFederativa.BAHIA), Sexo.FEMININO, EstadoCivil.CASADO, "01/04/2002","12354354212", "85890238985", "0i9090909", Setor.ENGENHARIA, 100.000, "10.000")
+
+print(medico1)

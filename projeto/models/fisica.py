@@ -24,5 +24,5 @@ class Fisica(Pessoa, ABC):
     def __str__(self) -> str:
         return (f"{super().__str__()}"
                 f"\nSexo: {self.sexo.nome}"
-                f"\nEstado Civil: {self.estadocivil.nome}"
+                f"\nEstado Civil: {self.estadocivil.name}"
                 f"\nData de nascimento: {self.datanascimento}")
