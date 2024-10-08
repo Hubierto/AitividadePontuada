@@ -10,7 +10,7 @@ def pessoa_valida():
         "Roberto Silva",
         "71999999999",
         "roberto.silva@gmail.com",
-        Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO)
+        Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO)
     )
     return pessoa1
 
@@ -40,24 +40,24 @@ def test_mudar_email_valido(pessoa_valida):
 
 def test_id_negativo():
     with pytest.raises(ValueError, match="ID negativo!"):
-        Pessoa(-67890, "Roberto Silva", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa(-67890, "Roberto Silva", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_id_tipo_invalido():
     with pytest.raises(TypeError, match="ID inválido!"):
-        Pessoa("67890", "Roberto Silva", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa("67890", "Roberto Silva", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_nome_tipo_invalido():
     with pytest.raises(TypeError, match="Nome inválido!"):
-        Pessoa(67890, 12345, "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa(67890, 12345, "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_nome_vazio():
     with pytest.raises(ValueError, match="Nome vazio!"):
-        Pessoa(67890, "", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa(67890, "", "71999999999", "roberto.silva@gmail.com", Endereco("Avenida Brasil","456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_numero_tipo_invalido():
     with pytest.raises(TypeError, match="Telefone inválido!"):
-        Pessoa(67890, "Roberto Silva", 71999999999, "roberto.silva@gmail.com", Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa(67890, "Roberto Silva", 71999999999, "roberto.silva@gmail.com", Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
 
 def test_email_tipo_invalido():
     with pytest.raises(TypeError, match="Email inválido!"):
-        Pessoa(67890, "Roberto Silva", "71999999999", 0, Endereco("Avenida Brasil", 456, "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
+        Pessoa(67890, "Roberto Silva", "71999999999", 0, Endereco("Avenida Brasil", "456", "12A", "2222222", "Rio de Janeiro", UnidadeFederativa.RIO_DE_JANEIRO))
