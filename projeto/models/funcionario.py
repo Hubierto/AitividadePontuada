@@ -44,7 +44,7 @@ class Funcionario(Fisica, ABC):
             raise ValueError("Salário negativo!")
     
     def _verificar_salario_tipo_invalido(self,valor):
-        if not isinstance(valor, float):
+        if not isinstance(valor, int):
             raise TypeError("Salário inválido!")
 
     def _verificar_cpf_tipo_invalido(self,valor):
@@ -60,9 +60,9 @@ class Funcionario(Fisica, ABC):
             raise TypeError("Matrícula inválida!")
 
     def __str__(self) -> str:
-        return (f"{super().__str__()}"
-                f"\nCpf: {self.cpf}"
-                f"\nRg: {self.rg}"
-                f"\nMatricula: {self.matricula}"
-                f"\nSetor: {self.setor.name}"
-                f"\nSalário: {self.salario}")
+        return (f"\n{super().__str__()}"
+                f"\n Cpf: {self.cpf}"
+                f"\n Rg: {self.rg}"
+                f"\n Matricula: {self.matricula}"
+                f"\n Setor: {self.setor.nome}"
+                f"\n Salário: {self.salario}")

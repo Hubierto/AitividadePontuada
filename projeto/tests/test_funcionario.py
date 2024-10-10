@@ -33,7 +33,7 @@ def test_mudar_rg_valido(funcionario_valido: Funcionario):
     assert funcionario_valido.rg == "3333-3333"
 
 def test_matricula_valido(funcionario_valido: Funcionario):
-    assert funcionario_valido.matricula == 3333
+    assert funcionario_valido.matricula == "3333"
 
 def test_mudar_matricula_valido(funcionario_valido: Funcionario):
     funcionario_valido.matricula = "4444"

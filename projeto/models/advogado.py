@@ -17,7 +17,8 @@ class Advogado(Funcionario):
 
     def _verificar_oab_tipo_invalido(self,valor):
         if not isinstance(valor, str):
-            raise TypeError("Oab inválida!")
+            raise TypeError("Oab inválido!")
+        return valor
 
     def __str__(self) -> str:
         return (f"{super().__str__()}"
