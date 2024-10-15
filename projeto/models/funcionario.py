@@ -64,5 +64,5 @@ class Funcionario(Fisica, ABC):
                 f"\n Cpf: {self.cpf}"
                 f"\n Rg: {self.rg}"
                 f"\n Matricula: {self.matricula}"
-                f"\n Setor: {self.setor.nome}"
+                f"\n Setor: {self.setor.name}"
                 f"\n Salário: {self.salario}")
